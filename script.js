@@ -4,6 +4,7 @@ let secretNum = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+//This function to implement the DRY principle
 const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
@@ -24,6 +25,7 @@ document.querySelector('.check').addEventListener('click', function () {
     }
   } else if (guess !== secretNum) {
     if (score > 1) {
+      //To check weather the guessed number is high or low
       displayMessage(guess > secretNum ? 'Too High!!' : 'Too Low!!');
       score--;
       document.querySelector('.score').textContent = score;
